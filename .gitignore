@@ -8,7 +8,8 @@ env/
 .env.*
 *.log
 *.log.*
-logs/
+logs/*
+!logs/.gitkeep
 *.csv
 *.py.bak*
 *.bak
