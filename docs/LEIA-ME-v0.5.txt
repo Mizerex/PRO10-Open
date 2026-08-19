@@ -1,0 +1,41 @@
+PRO10 WINDOWS BRIDGE v0.5
+
+Objetivo
+========
+Manter uma unica conexao BLE persistente com o PRO 10, sincronizar hora e clima,
+registrar bateria e reconectar sem agressividade.
+
+Identificacao do relogio
+========================
+1. MAC BLE confirmado: AA:BB:CC:DD:EE:FF
+2. Nome logico futuro: PRO 10
+3. Nome atual de fallback: PRO 10
+
+O nome PRO 10 e apenas criterio de busca. Esta versao nao grava nem altera
+o nome do relogio, pois o APK analisado nao confirmou comando para isso.
+
+Estabilidade e consumo
+======================
+- Keepalive confirmado 0x19/0x00 a cada 30 segundos.
+- Tres falhas consecutivas sao exigidas antes de abandonar a sessao.
+- Reconexao inicia em 15 segundos e cresce ate 120 segundos.
+- Falha de internet/clima nao derruba a conexao BLE.
+- A tarefa pode continuar quando o notebook estiver usando bateria.
+- Logs possuem rotacao para evitar crescimento ilimitado.
+
+Arquivos
+========
+- pro10_windows_bridge_v0_5.py
+- pro10_config_v0_5.json
+- pro10_bridge_v0_5.log
+- pro10_bateria.csv
+
+Comando de chamadas 0x02/0x11
+=============================
+Nao e enviado. A analise do APK mostrou que androidCall(estado, texto) transmite
+estado de uma chamada em andamento, condicionado pelo app, e nao configura o
+radio de chamadas do relogio. Portanto, 0=OFF nao foi confirmado com seguranca.
+
+Nao incluidos
+=============
+OTA, firmware, factory reset, watchfaces e comandos desconhecidos.

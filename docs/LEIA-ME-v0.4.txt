@@ -1,0 +1,58 @@
+PRO10 WINDOWS BRIDGE v0.4 - PRESENÇA INTELIGENTE
+
+Objetivo
+========
+1. Você se aproxima do PC usando o PRO 10.
+2. O Windows detecta o relógio.
+3. Conecta automaticamente.
+4. Faz handshake.
+5. Sincroniza a hora.
+6. Atualiza o clima.
+7. Mantém a sessão BLE ativa para o clima não desaparecer.
+8. Se você sair de perto e a conexão cair, aguarda e procura novamente.
+
+Clima
+=====
+É atualizado ao conectar e depois a cada 3 horas, sem desconectar.
+
+Carregamento
+============
+O programa não encerra a conexão por o relógio estar carregando.
+Se o firmware do relógio mantiver o BLE ativo durante a carga, ele continuará conectado.
+Se o relógio reiniciar ou derrubar o BLE ao entrar no carregador, a v0.4 tentará reencontrá-lo.
+
+Importante
+==========
+A v0.4 substitui as tarefas agendadas da v0.3.
+Não rode v0.3 e v0.4 ao mesmo tempo.
+
+Instalação
+==========
+No PowerShell, dentro da pasta extraída:
+
+powershell -ExecutionPolicy Bypass -File .\instalar_pro10_v0_4.ps1
+
+Teste manual
+============
+python .\pro10_windows_bridge_v0_4.py
+
+Para parar um teste manual:
+Ctrl+C
+
+Configuração
+============
+Arquivo:
+pro10_config_v0_4.json
+
+Valores principais:
+- keepalive_seconds: 15
+- weather_update_minutes: 180
+- scan_pause_seconds: 20
+
+Observação sobre bateria
+========================
+Esta versão prioriza estabilidade e clima persistente.
+Depois de confirmada a estabilidade, a próxima fase será reduzir consumo:
+- aumentar o intervalo do keepalive se o firmware permitir;
+- desativar serviços/funções não usados;
+- reduzir áudio/chamadas/notificações se possível.

@@ -1,0 +1,53 @@
+{
+  "city": "São Paulo",
+  "supports_7_day": true,
+  "feature_bytes_hex": "AA CF E0 81 DF F6 FC 38 00 00 00 00 00 00 10 46 41 08 CF 10 00 00 00 00 00 00",
+  "feature_offset_18_hex": "CF",
+  "feature_mask_hex": "08",
+  "forecast_packet_hex": "DF 00 37 1F 02 01 23 00 32 07 00 1A 08 0D 05 14 19 00 1A 08 0E 04 14 18 00 1A 08 0F 03 13 18 00 1A 08 10 01 13 19 00 1A 08 11 00 14 1A 00 1A 08 12 00 15 1B 00 1A 08 13 01 15 1B",
+  "current_packet_hex": "DF 00 17 56 02 01 1D 00 12 07 EA 08 0D 00 05 18 19 08 47 75 61 72 75 6A C3 A1 18",
+  "forecast": [
+    {
+      "date": "2026-08-13",
+      "condition_code": 5,
+      "minimum": 20,
+      "maximum": 25
+    },
+    {
+      "date": "2026-08-14",
+      "condition_code": 4,
+      "minimum": 20,
+      "maximum": 24
+    },
+    {
+      "date": "2026-08-15",
+      "condition_code": 3,
+      "minimum": 19,
+      "maximum": 24
+    },
+    {
+      "date": "2026-08-16",
+      "condition_code": 1,
+      "minimum": 19,
+      "maximum": 25
+    },
+    {
+      "date": "2026-08-17",
+      "condition_code": 0,
+      "minimum": 20,
+      "maximum": 26
+    },
+    {
+      "date": "2026-08-18",
+      "condition_code": 0,
+      "minimum": 21,
+      "maximum": 27
+    },
+    {
+      "date": "2026-08-19",
+      "condition_code": 1,
+      "minimum": 21,
+      "maximum": 27
+    }
+  ]
+}

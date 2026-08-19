@@ -1,0 +1,31 @@
+PRO10 - MONITOR DE BATERIA
+
+Este script e uma versao da v0.4 com medicao de bateria integrada.
+
+Ele grava:
+pro10_bateria.csv
+
+A cada 10 minutos, enquanto o relogio estiver conectado, registra:
+- data/hora
+- porcentagem de bateria
+- se estava conectado
+- evento (connect / sample / disconnect)
+- minutos da sessao
+
+Depois, basta enviar o arquivo pro10_bateria.csv para o ChatGPT.
+Com ele sera possivel calcular:
+- consumo medio por hora
+- tempo estimado de bateria
+- comportamento durante carregamento
+- queda entre amostras
+- efeito da conexao persistente
+
+IMPORTANTE:
+Nao rode esta versao junto com a v0.4 antiga.
+Ela usa a mesma conexao BLE.
+
+Uso manual:
+python .\pro10_windows_bridge_v0_4_1_bateria.py
+
+Arquivo de dados:
+C:\Users\<usuario>\Documents\PRO10-Open\pro10_bateria.csv

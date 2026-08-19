@@ -1,0 +1,53 @@
+PRO10 WINDOWS BRIDGE v0.3
+
+O que faz
+=========
+- Windows encontra o PRO 10 por BLE.
+- Faz o handshake que já funcionou no relógio.
+- Sincroniza a hora.
+- Envia previsão de 7 dias.
+- Envia clima atual.
+- Espera 2 segundos para o relógio processar.
+- Desconecta imediatamente.
+- Não entra em loop infinito.
+- Mantém log em pro10_bridge.log.
+
+Automação
+=========
+O instalador cria duas tarefas no Windows:
+1. atualizar ao entrar no Windows;
+2. atualizar a cada 3 horas.
+
+O intervalo de 3 horas foi escolhido para reduzir conexões BLE desnecessárias.
+
+Instalação
+==========
+1. Extraia o ZIP.
+2. Abra PowerShell na pasta extraída.
+3. Execute:
+
+   powershell -ExecutionPolicy Bypass -File .\instalar_pro10_v0_3.ps1
+
+Para usar outro intervalo, por exemplo 4 horas:
+
+   powershell -ExecutionPolicy Bypass -File .\instalar_pro10_v0_3.ps1 -IntervalHours 4
+
+Execução manual
+===============
+python .\pro10_windows_bridge_v0_3.py
+
+Configuração
+============
+Edite pro10_config.json em:
+Documents\PRO10-Open
+
+Ali você pode alterar:
+- cidade;
+- latitude;
+- longitude;
+- número de tentativas de scan/conexão;
+- tempo final de processamento.
+
+Remoção da automação
+====================
+powershell -ExecutionPolicy Bypass -File .\remover_automacao_pro10.ps1

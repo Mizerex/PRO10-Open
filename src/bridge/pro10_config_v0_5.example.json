@@ -1,0 +1,18 @@
+{
+  "device_address": "AA:BB:CC:DD:EE:FF",
+  "preferred_device_name": "PRO 10",
+  "fallback_device_name": "PRO 10",
+  "city": "São Paulo",
+  "latitude": -23.5505,
+  "longitude": -46.6333,
+  "scan_timeout_seconds": 6,
+  "scan_pause_seconds": 20,
+  "connect_retry_seconds": 15,
+  "max_reconnect_seconds": 120,
+  "keepalive_seconds": 30,
+  "max_consecutive_keepalive_failures": 3,
+  "weather_update_minutes": 180,
+  "time_sync_minutes": 60,
+  "battery_log_minutes": 10,
+  "ack_timeout_seconds": 4.0
+}
