@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -102,7 +103,11 @@ async def inventory(args: argparse.Namespace) -> dict:
 
 async def main() -> None:
     args = parse_args()
-    report = await inventory(args)
+    try:
+        report = await inventory(args)
+    except RuntimeError as exc:
+        print(f"Varredura não concluída: {exc}", file=sys.stderr)
+        raise SystemExit(1) from None
     args.output.write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
     )
